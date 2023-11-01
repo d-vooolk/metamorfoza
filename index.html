@@ -457,14 +457,14 @@
                     наполненную
                     эксклюзивными обновлениями, анонсами концертов и закулисными историями.
                 </div>
-                <div class="mail-form">
+                <form class="mail-form" action="send_mail.php" method="post" target="_blank">
                     <div class="mail-input">
-                        <input type="email" placeholder="Электронная почта"/>
+                        <input formtarget="_blank" name="mail-send" type="email" placeholder="Электронная почта"/>
                     </div>
                     <div class="mail-button-wrapper">
-                        <button class="button-sale"><span>Отправить</span></button>
+                        <button class="button-sale" type="submit"><span>Отправить</span></button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </section>
@@ -505,19 +505,19 @@
                 <div class="cooperation-image-wrapper">
                     <img src="images/images/cooperation/cooperation.jpeg" alt="cooperation"/>
                 </div>
-                <div class="cooperation-input-wrapper">
-                    <input class="cooperation-input-name" type="text" placeholder="Представьтесь пожалуйста">
-                    <input class="cooperation-input-email" type="email" placeholder="Электронная почта">
-                    <input type="text" placeholder="+7 (999) 999-99-99">
-                    <textarea placeholder="Сообщение" class="cooperation-textarea"></textarea>
+                <form class="cooperation-input-wrapper" method="post" action="cooperation.php" target="_blank">
+                    <input name="name" class="cooperation-input-name" type="text" placeholder="Представьтесь пожалуйста">
+                    <input name="mail" class="cooperation-input-email" type="email" placeholder="Электронная почта" required>
+                    <input name="phone" type="text" placeholder="+7 (999) 999-99-99" required>
+                    <textarea name="message" placeholder="Сообщение" class="cooperation-textarea"></textarea>
                     <div class="personal-agreement-wrapper">
-                        <input class="cooperation-checkbox" type="checkbox">
+                        <input name="is_agree" class="cooperation-checkbox" type="checkbox">
                         <span class="personal-agreement-text">
                             Я даю согласие на обработку моих персональных данных и соглашаюсь с политикой конфиденциальности
                         </span>
                     </div>
-                    <button class="button-sale"><span>Отправить</span></button>
-                </div>
+                    <button formtarget="_blank" type="submit" class="button-sale"><span>Отправить</span></button>
+                </form>
             </div>
         </div>
     </section>
