@@ -4,7 +4,7 @@ const videoSliderContainer = document.getElementById('videoSliderContainer');
 
 const getVideoLayout = () => {
     videoSliderContainer.innerHTML = '';
-    videoSliderContainer.innerHTML += videoSliderConfig.map(video => `
+    videoSliderContainer.innerHTML = videoSliderConfig.map((video) => `
                 <div class="slider-item">
                     <div>
                         <iframe src="https://www.youtube.com/embed/${video.link.split('=')[1].split('&')[0]}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
