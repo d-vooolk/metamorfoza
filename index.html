@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Струнный оркестр Метаморфоза</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="styles/header.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/slider.css"/>
+    <link rel="stylesheet" href="styles/animations-compiled.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<header id="header">
+    <div class="logo-wrapper">
+        <img src="images/logo.svg" alt="metamorphose logo">
+    </div>
+    <nav class="nav-bar">
+        <span><a href="#about-section">Оркестр</a></span>
+        <span><a href="#concerts-section">Концерты</a></span>
+        <span><a href="#video-section">Видео</a></span>
+        <span><a href="#records-section">Записи</a></span>
+        <span><a href="#feedback-section">Отзывы</a></span>
+        <span><a href="#gallery-section">Галерея</a></span>
+        <span><a href="#cooperation-section">Сотрудничество</a></span>
+    </nav>
+
+    <svg>
+        <defs>
+            <filter id="gooeyness">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur"/>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10"
+                               result="gooeyness"/>
+                <feComposite in="SourceGraphic" in2="gooeyness" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+    <div id="burger" class="plate plate5 nav-burger" onclick="this.classList.toggle('active')">
+        <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+            <path class="line line1" d="M 30,35 H 70 "/>
+            <path class="line line2" d="M 50,50 H 30 L 34,32"/>
+            <path class="line line3" d="M 50,50 H 70 L 66,68"/>
+            <path class="line line4" d="M 30,65 H 70 "/>
+        </svg>
+        <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
+            <path class="line" d="M 34,32 L 66,68"/>
+            <path class="line" d="M 66,32 L 34,68"/>
+        </svg>
+    </div>
+
+    <div class="nav-wrapper" id="nav-wrapper"></div>
+    <div class="side-menu" id="side-menu">
+        <nav class="side-nav-bar">
+            <span class="nav-item"><a href="#about-section">Оркестр</a></span>
+            <span class="nav-item"><a href="#concerts-section">Концерты</a></span>
+            <span class="nav-item"><a href="#video-section">Видео</a></span>
+            <span class="nav-item"><a href="#records-section">Записи</a></span>
+            <span class="nav-item"><a href="#feedback-section">Отзывы</a></span>
+            <span class="nav-item"><a href="#gallery-section">Галерея</a></span>
+            <span class="nav-item"><a href="#cooperation-section">Сотрудничество</a></span>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section id="general">
+        <div class="general-screen">
+            <div class="general-screen-text">
+                <h1>СТРУННЫЙ ОРКЕСТР "МЕТАМОРФОЗА"</h1>
+                <div class="description-wrapper">
+                    <div class="general-description">
+                        Молодой талантливый коллектив, успевший завоевать сердца публики своей яркой и профессиональной
+                        игрой, <b class="bold-text">под
+                        управлением дирижёра Павла Любомудрова</b> представляет различные музыкальные программы,
+                        отличающиеся виртуозностью исполнения
+                        и захватывающей энергетикой.
+                    </div>
+                    <a href="#" target="_blank noopener noreferer" id="generalButtonToSale">
+                        <button class="button-sale">
+                        <span>
+                            Купить билет
+                        </span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="general-img-wrapper">
+                <img class="image" src="images/images/general.png" alt="general image metamorphose">
+            </div>
+        </div>
+    </section>
+
+    <section id="future-events" class="future-events">
+        <div class="future-events-wrapper">
+            <h2 class="head-text">ПРЕДСТОЯЩИЕ СОБЫТИЯ</h2>
+            <div class="event-date">
+                <span id="events-label">Октябрь 2023</span>
+                <div class="arrow" id="soon-events-arrow-back">
+                    <img src="images/nav/arrow.svg" alt="предыдущее событие" class="prev-event">
+                </div>
+                <div class="arrow" id="soon-events-arrow-next">
+                    <img src="images/nav/arrow.svg" alt="следующее событие" class="next-event">
+                </div>
+            </div>
+
+            <div class="event-cards" id="events-container"></div>
+            <button id="showMoreButton" class="event-show-more-button button-sale button-sale-color long-button">
+                <span>
+                    Показать больше
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <section class="about-section" id="about-section">
+        <div class="about-wrapper">
+            <h2 class="head-text head-text-about">ОБ ОРКЕСТРЕ</h2>
+            <div class="about-first-text">
+                <div class="about-title">
+                    Струнный оркестр «Метаморфоза» — это наслаждение для ценителей и гурманов классической музыки.
+                </div>
+                <div class="about-description">
+                    «Метаморфоза» — это концерты с участием от 12 до 76 музыкантов, в том числе с зарубежными и
+                    белорускими артистами
+                    мирового уровня. Камерные, большие симфонические и индивидуальные составы оркестра. Яркие программы
+                    и музыкальное
+                    наслаждение искренностью, эмоциональностью и красотой подачи классических шедевров и современной
+                    музыки. Каждое
+                    выступление оркестра «Метаморфоза» — это праздничный фейерверк впечатлений и чувств от живой
+                    классики в стильном и
+                    современном исполнении!
+                </div>
+            </div>
+
+            <div class="about-puzzles">
+                <div class="first-column image-wrapper">
+                    <img class="image" src="images/images/about1.jpeg" alt="о оркестре метаморфоза"/>
+                    <button id="about-read-more" class="button-sale"><span>Читать подробнее</span></button>
+                </div>
+                <div class="second-column image-wrapper">
+                    <div class="about-third-text">
+                        Оркестр «Метаморфоза» был создан в 2015 году дирижёром Павлом Любомудровым, выпускником
+                        Санкт-Петербургской государственной
+                        консерватории им. Н.А. Римского-Корсакова по специализации оперно-симфоническое дирижирование
+                        (класс Заслуженного артиста
+                        РСФСР, профессора А.В. Алексеева).
+                    </div>
+                    <div class="about-fourth-text">
+                        Струнный оркестр «Метаморфоза» является членом Белорусского союза музыкальных деятелей. Оркестру
+                        всего 7 лет, тем не
+                        менее, он провёл более 40 концертных программ, некоторые из них получили высокую оценку
+                        белорусских и зарубежных критиков.
+                    </div>
+                    <div class="image-container-about">
+                        <img class="image" src="images/images/about2.jpeg" alt="о оркестре метаморфоза"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--        hide container-->
+        <div id="about-more-info" class="about-section-2">
+            <div class="text-about-2 margin-top-40">
+                «Метаморфоза» со своим постоянно меняющимся музыкальным репертуаром подтверждает своё название,
+                экспериментируя
+                со своим творческим ДНК. В репертуаре оркестра как произведения разных композиторских школ: от Альбинони
+                до
+                Сибелиуса, от Прокофьева до современных белорусских композиторов, чьи сочинения оркестр часто исполняют
+                впервые,
+                так и саундтреки к известным кинофильмам.
+
+                <br><br>
+                Солисты концертных программ оркестра — виолончелисты: Микаэл
+                Самсонов,
+                Александр Князев, Михаил Радунский, Антонио Мостаччи; скрипачи: Андрей Баранов, Лиза Якобс, Илья Иофф,
+                Айлен Притчин,
+                Дмитрий Смирнов, Юлия Лебеденко; арфистка Cофия Кипрская; пианисты: Станислав Соловьёв и Денис Линник;
+                флейтистка
+                Мария Федотова; гобоист Хуан Мануэль Гарсия-Кано совместно выступали со Струнным оркестром
+                «Метаморфоза».
+            </div>
+            <div class="image-wrapper margin-bottom-40">
+                <img class="image" src="images/images/about3.png" alt="about">
+            </div>
+            <div class="text-about-2">
+                Каждое выступление оркестра незабываемо. Ценители классической музыки порой получают настоящее духовное
+                удовольствие и утешение от концертов оркестра «Метаморфоза».
+            </div>
+            <hr class="margin-bottom-40"/>
+            <div class="text-about-wrapper">
+                <div class="text-about-3">
+                    Музыка меняет людей, в ней нуждаются все, а не только люди искусства. Музыка вызывает лучшие эмоции,
+                    выступая в качестве очищающего фильтра на уровне подсознания
+                </div>
+                <div class="text-about-2 text-center">
+                    Художественный руководитель и дирижёр <span class="yellow-text">Павел Любомудров</span>
+                </div>
+            </div>
+            <hr class="margin-bottom-40"/>
+            <div class="text-about-2">
+                Павел Любомудров окружил себя талантливыми белорусскими музыкантами, среди них выпускники крупнейших
+                музыкальных вузов Санкт-Петербурга, Москвы и Минска. Мастерство и профессионализм оркестра «Метаморфоза»
+                отмечен сотрудничеством с итальянской звукозаписывающей компанией Halidon. «Метаморфоза» — единственный
+                такой оркестр из Беларуси. В 2016м году Оркестр «Метаморфоза» совместно выступал с американской
+                метал-группой MANOWAR в Минске, ещё раз доказав свою многогранность, креативность и талант.
+                <br><br>
+                <b>Струнный оркестр «Метаморфоза» обладает достаточным опытом и готов к сотрудничеству, в том числе и с
+                    иностранными партнёрами.</b>
+            </div>
+            <div class="about-list-wrapper">
+                <h2 class="head-text">Репертуар</h2>
+                <ul class="about-list margin-bottom-40">
+                    <li>1 и 2 сюиты из балета «Ромео и Джульетта» С. Прокофьева.</li>
+
+                    <li>Сюита «Щелкунчик» op.71, фантазия-увертюра «Ромео и Джульетта», Вариации на тему рококо и Пеццо
+                        Каприччиозо для виолончели, «Воспоминание о Флоренции» и Серенада для струнного оркестра, Вальс
+                        Скерцо op.23 и Размышление 0p.42, № 1 П.И. Чайковского.
+                    </li>
+
+                    <li>Симфоническая сюита «Шехеразада» и «Испанское каприччио» Н.А. Римского-Корсакова. 1я сюита из
+                        оперы «Кармен» Ж. Бизе. «Ночь на лысой горе» (аранж. Н.А. Римского-Корсакова) и «Картинки с
+                        выставки» М.П. Мусоргского.1-я, 2-я, 3-я, 4-я, 5-я и 8-я симфонии, увертюра «Кориолан» Л.
+                        Бетховена.
+                    </li>
+
+                    <li>Концерты для флейты А.Ю. Эшпая (посвящ. М. Федотовой), В.А. Моцарта (для гобоя), А. Сальери
+                        (для флейты и гобоя).
+                    </li>
+
+                    <li>Концерт для фортепиано с оркестром № 1 ре минор, соч. 15 Й. Брамса.</li>
+
+                    <li>Концерт для скрипки К. Нильсена.</li>
+
+                    <li>Все концерты для клавира № 1–7 BWV 1052–1058, 3 и 6 «Бранденбургские концерты» И.С. Баха. 14й
+                        квартет «Смерть и Дева» (аранж. Г. Малера) Ф. Шуберта. «Дивертисмент для струнных» Б. Бартока.
+                        40-я симфония, Дивертисменты № 1–3, К. 136–138 и Серенада соль мажор, К. 525 В.А. Моцарта.
+                    </li>
+
+                    <li>Камерная симфония, соч. 110 Д.Д. Шостаковича и Простая симфония Б. Бриттена.</li>
+
+                    <li>Концерт № 11 для фортепиано с оркестром, первый и второй концерты для виолончели, 45-я симфония
+                        и «Семь последних слов Христа на Кресте» Й. Гайдна. «Холберг сюита» Э. Грига. «Серенада для
+                        струнного оркестра» Л. Яначека. «Серенада на Шведские Мелодии» и «Кол-Нидрей» М. Бруха.
+                        «Молитва» Э. Блоха. «Вокализ» С. Рахманинова. «Четыре сезона в Буэнос-Айресе», «Забвение»,
+                        «Большое танго» и «Либертанго» А. Пьяццоллы. «Четыре сезона года» и концерт для лютни с
+                        оркестром, RV 93 А. Вивальди, «Дьявольскин трели» (переложение для струнных и скрипки соло) Дж.
+                        Тартини.
+                    </li>
+
+                    <li>Гитарный концерт № 1 ре мажор, соч. 99 М. Кастельнуово-Тедеско. «Вариации на тему Россини» и 2-й
+                        концерт для скрипки с оркестром (аранжировка для струнных) Н. Паганини. «Грустный вальс»,
+                        «Романс in C» op.42 и «Праздничное Анданте» Я. Сибелиуса. «Интродукция и Рондо Каприччиозо»,
+                        «Андалузский романс» и «Цыганские напевы» П. Сарасате. «Адажио для струнных» С. Барбера.
+                        «Павана» Г. Форе. «Танец эльфов» Д. Поппера. Музыка из кинофильмов: «Пираты Карибского моря»,
+                        «Властелин колец», «Звёздные войны», «Джеймс Бонд», «Африка», «Грязные танцы», «Ромео и
+                        Джульетта», «Миссия» и другие., «Менск» (посв. городу Минску) Д. Конти. «Violoncelles, vibrez!»
+                        Дж. Соллимы.
+                    </li>
+
+                    <li>Двойной концерт Ф. Мендельсона ре-минор для ф-но, скрипки и струнного оркестра. Концерт ре-мажор
+                        Э. Шоссона. Сюиты А. Литвиновского — «Толстая Тетрадь», «Сказки Волшебного Дерева», «Пеллеас и
+                        Мелизанда».
+                    </li>
+
+                    <li>Cюита для Скрипки и струнных ре-мажор op.117 Я. Сибелиуса. «Дальний Свет» концерт для скрипки и
+                        струнного оркестра П. Васкса.
+                    </li>
+                </ul>
+            </div>
+            <button id="about-hide-more-info" class="button-sale long-button about-button"><span>Свернуть</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="soon-event-wrapper" id="concerts-section"></section>
+
+    <section class="video" id="video-section">
+        <div class="video-header">
+            <h2 class="head-text">ВИДЕО</h2>
+            <div class="arrow-wrapper video-arrow-wrapper">
+                <div class="arrow" id="arrow-prev">
+                    <img src="images/nav/arrow.svg" alt="предыдущее событие" class="prev-event">
+                </div>
+                <div class="arrow" id="arrow-next">
+                    <img src="images/nav/arrow.svg" alt="следующее событие" class="next-event">
+                </div>
+            </div>
+        </div>
+        <div class="slider-wrapper video-slider">
+            <div class="video-slider-container">
+                <div class="slider-item">
+                    <div>
+                        <img src="images/images/video1.png" alt="video">
+                    </div>
+                    <div class="video-text">
+                        <span class="video-title">Bach / Air on the g string</span>
+                        <span class="video-description">Pavel Lyubomudrov / Metamorphose String Orchestra</span>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div>
+                        <img src="images/images/video2.png" alt="video">
+                    </div>
+                    <div class="video-text">
+                        <span class="video-title">Mozart / Eine kleine nachtmusik</span>
+                        <span class="video-description">Pavel Lyubomudrov / Metamorphose String Orchestra</span>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div>
+                        <img src="images/images/video1.png" alt="video">
+                    </div>
+                    <div class="video-text">
+                        <span class="video-title">Bach / Air on the g string</span>
+                        <span class="video-description">Pavel Lyubomudrov / Metamorphose String Orchestra</span>
+                    </div>
+                </div>
+                <div class="slider-item">
+                    <div>
+                        <img src="images/images/video2.png" alt="video">
+                    </div>
+                    <div class="video-text">
+                        <span class="video-title">Mozart / Eine kleine nachtmusik</span>
+                        <span class="video-description">Pavel Lyubomudrov / Metamorphose String Orchestra</span>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="margin-bottom-40">
+            <h2 class="head-text">ПРОШЕДШИЕ СОБЫТИЯ</h2>
+        </div>
+        <div class="past-events-wrapper">
+            <div class="past-events-list" id="pastEventsList"></div>
+        </div>
+    </section>
+
+    <section class="records-section" id="records-section">
+        <h2 class="head-text margin-bottom-40">ЗАПИСИ ОНЛАЙН</h2>
+        <div class="records-text-wrapper">
+            <div class="records-text">
+                Погрузитесь в увлекательный мир музыки струнного оркестра «Метаморфоза», подключившись онлайн. Побалуйте
+                свои уши
+                богатыми и гармоничными мелодиями, воплощёнными в жизнь тонким, но мощным сочетанием скрипок, альтов,
+                виолончелей и
+                контрабасов. Испытайте замысловатое взаимодействие этих великолепных инструментов, которые сплетаются
+                вместе, создавая
+                завораживающее звуковое полотно.
+            </div>
+        </div>
+        <div class="records-wrapper">
+            <div class="records-list-wrapper" id="recordsContainer"></div>
+        </div>
+    </section>
+
+    <section class="soon-event-wrapper" id="soon-concert-double"></section>
+
+    <section class="feedback-section" id="feedback-section">
+        <div class="video-header">
+            <h2 class="head-text">ОТЗЫВЫ НАШИХ СЛУШАТЕЛЕЙ</h2>
+            <div class="arrow-wrapper">
+                <div class="arrow" id="arrow-feedback-prev">
+                    <img src="images/nav/arrow.svg" alt="предыдущее событие" class="prev-event">
+                </div>
+                <div class="arrow" id="arrow-feedback-next">
+                    <img src="images/nav/arrow.svg" alt="следующее событие" class="next-event">
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-wrapper feedback-slider">
+            <div class="feedback-slider-container">
+
+                <div class="slider-item">
+                    <div class="feedback-wrapper">
+                        <div class="feedback-header">
+                            <div class="feedback-icon">К</div>
+                            <div class="feedback-name">
+                                <div class="feedback-user-name">Катерина</div>
+                                <div class="feedback-user-link">
+                                    <a href="https://classicalmusicnews.ru" target="_blank noopener noreferer">
+                                        classicalmusicnews.ru
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feedback-text">
+                            Периодически посещаю концерты в Большом зале московской консерватории. Но этот концерт меня
+                            особенно впечатлил.
+                            Наслаждалась танго в исполнении струнного оркестра Метаморфоза. Мне показалось они
+                            объединили необъединяемое,
+                            сделали что‑то невозможное, весь концерт не сводила глаз с талантливого дирижёра как
+                            заворожённая. Потрясающая
+                            программа оркестра! Такого удовольствия я давно не испытывала!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="feedback-wrapper">
+                        <div class="feedback-header">
+                            <div class="feedback-icon">К</div>
+                            <div class="feedback-name">
+                                <div class="feedback-user-name">Катерина</div>
+                                <div class="feedback-user-link">
+                                    <a href="https://classicalmusicnews.ru" target="_blank noopener noreferer">
+                                        classicalmusicnews.ru
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feedback-text">
+                            Периодически посещаю концерты в Большом зале московской консерватории. Но этот концерт меня
+                            особенно впечатлил.
+                            Наслаждалась танго в исполнении струнного оркестра Метаморфоза. Мне показалось они
+                            объединили необъединяемое,
+                            сделали что‑то невозможное, весь концерт не сводила глаз с талантливого дирижёра как
+                            заворожённая. Потрясающая
+                            программа оркестра! Такого удовольствия я давно не испытывала!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="feedback-wrapper">
+                        <div class="feedback-header">
+                            <div class="feedback-icon">К</div>
+                            <div class="feedback-name">
+                                <div class="feedback-user-name">Катерина</div>
+                                <div class="feedback-user-link">
+                                    <a href="https://classicalmusicnews.ru" target="_blank noopener noreferer">
+                                        classicalmusicnews.ru
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feedback-text">
+                            Периодически посещаю концерты в Большом зале московской консерватории. Но этот концерт меня
+                            особенно впечатлил.
+                            Наслаждалась танго в исполнении струнного оркестра Метаморфоза. Мне показалось они
+                            объединили необъединяемое,
+                            сделали что‑то невозможное, весь концерт не сводила глаз с талантливого дирижёра как
+                            заворожённая. Потрясающая
+                            программа оркестра! Такого удовольствия я давно не испытывала!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="feedback-wrapper">
+                        <div class="feedback-header">
+                            <div class="feedback-icon">К</div>
+                            <div class="feedback-name">
+                                <div class="feedback-user-name">Катерина</div>
+                                <div class="feedback-user-link">
+                                    <a href="https://classicalmusicnews.ru" target="_blank noopener noreferer">
+                                        classicalmusicnews.ru
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feedback-text">
+                            Периодически посещаю концерты в Большом зале московской консерватории. Но этот концерт меня
+                            особенно впечатлил.
+                            Наслаждалась танго в исполнении струнного оркестра Метаморфоза. Мне показалось они
+                            объединили необъединяемое,
+                            сделали что‑то невозможное, весь концерт не сводила глаз с талантливого дирижёра как
+                            заворожённая. Потрясающая
+                            программа оркестра! Такого удовольствия я давно не испытывала!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-item"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="subscribe-section">
+        <div class="subscribe-wrapper">
+            <div class="subscribe-image">
+                <img src="images/images/news-img.jpeg" alt="подписывайтесь на наши новости"/>
+            </div>
+            <div class="subscribe-text-wrapper">
+                <h3 class="head-text-h3">
+                    ПОДПИСЫВАЙТЕСЬ НА НАШИ НОВОСТИ
+                </h3>
+                <div class="subscribe-description">
+                    Оставайтесь на связи с чарующими звуками струнного оркестра, подписавшись на нашу рассылку,
+                    наполненную
+                    эксклюзивными обновлениями, анонсами концертов и закулисными историями.
+                </div>
+                <div class="mail-form">
+                    <div class="mail-input">
+                        <input type="email" placeholder="Электронная почта"/>
+                    </div>
+                    <div class="mail-button-wrapper">
+                        <button class="button-sale"><span>Отправить</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery-section">
+        <div class="gallery-wrapper">
+            <div class="gallery-header margin-bottom-40">
+                <h2 class="head-text">ГАЛЕРЕЯ</h2>
+                <div class="arrow-wrapper">
+                    <div class="arrow" id="arrow-galery-prev">
+                        <img src="images/nav/arrow.svg" alt="предыдущее событие" class="prev-event">
+                    </div>
+                    <div class="arrow" id="arrow-galery-next">
+                        <img src="images/nav/arrow.svg" alt="следующее событие" class="next-event">
+                    </div>
+                </div>
+            </div>
+            <div class="slider-wrapper video-slider">
+                <div class="gallery-slider-container">
+                    <div class="slider-item">
+                        <div class="image-wrapper">
+                            <img class="image" src="images/images/gallery1.jpeg" alt="video">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="image-wrapper">
+                            <img class="image" src="images/images/gallery2.jpeg" alt="video">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="image-wrapper">
+                            <img class="image" src="images/images/gallery3.jpeg" alt="video">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cooperation-section" id="cooperation-section">
+        <div class="cooperation-wrapper">
+            <div class="cooperation-head-text margin-bottom-40">
+                <h2 class="head-text">СОТРУДНИЧЕСТВО</h2>
+            </div>
+            <div class="cooperation-description">
+                <div class="cooperation-description-text">
+                    <span class="gray-text">Струнный оркестр «Метаморфоза» обладает достаточным опытом и готов к сотрудничеству, в том числе и
+                        с иностранными партнёрами.</span> Если вы ищете сотрудничество, свяжитесь с нами, поскольку мы
+                    готовы
+                    поделиться своими навыками и работать вместе для достижения общей цели.
+                </div>
+            </div>
+            <div class="cooperation-info-wrapper">
+                <div class="cooperation-image-wrapper">
+                    <img src="images/images/cooperation.jpeg" alt="cooperation"/>
+                </div>
+                <div class="cooperation-input-wrapper">
+                    <input class="cooperation-input-name" type="text" placeholder="Представьтесь пожалуйста">
+                    <input class="cooperation-input-email" type="email" placeholder="Электронная почта">
+                    <input type="text" placeholder="+7 (999) 999-99-99">
+                    <textarea placeholder="Сообщение" class="cooperation-textarea"></textarea>
+                    <div class="personal-agreement-wrapper">
+                        <input class="cooperation-checkbox" type="checkbox">
+                        <span class="personal-agreement-text">
+                            Я даю согласие на обработку моих персональных данных и соглашаюсь с политикой конфиденциальности
+                        </span>
+                    </div>
+                    <button class="button-sale"><span>Отправить</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="modal" id="modal">
+        <div class="close-modal" id="closeModalButton">
+            <img src="images/nav/close.svg" alt="close"/>
+        </div>
+        <div class="info-container" id="modalContainer"></div>
+    </section>
+
+</main>
+
+<footer id="footer" class="footer">
+    <div class="footer-info">
+        <div class="about-and-social">
+            <div class="footer-logo">
+                <img src="images/logo.svg" alt="logo"/>
+            </div>
+            <div class="orcestre-name">Струнный оркестр «Метаморфоза»</div>
+            <div class="orcestre-ogrn">«Белорусский Союз музыкальных деятелей» УНП 102305079</div>
+            <div class="social">
+                <div class="social-img-wrapper">
+                    <img src="images/icons/facebook.svg" alt="facebook">
+                </div>
+                <div class="social-img-wrapper">
+                    <img src="images/icons/instagram.svg" alt="instagram">
+                </div>
+                <div class="social-img-wrapper">
+                    <img src="images/icons/youtube.svg" alt="youtube">
+                </div>
+                <div class="social-img-wrapper">
+                    <img src="images/icons/vk.svg" alt="vk">
+                </div>
+                <div class="social-img-wrapper">
+                    <img src="images/icons/spotify.svg" alt="spotify">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-menu-wrapper">
+            <div class="footer-menu-header">Меню</div>
+            <div class="footer-menu">
+                <div class="footer-menu-first-list">
+                    <a class="footer-link" href="#about-section">
+                        <div class="footer-menu-item active-effect">Оркестр</div>
+                    </a>
+                    <a class="footer-link" href="#concerts-section">
+                        <div class="footer-menu-item active-effect">Концерты</div>
+                    </a>
+                    <a class="footer-link" href="#video-section">
+                        <div class="footer-menu-item active-effect">Видео</div>
+                    </a>
+                </div>
+                <div>
+                    <a class="footer-link" href="#records-section">
+                        <div class="footer-menu-item active-effect">Записи</div>
+                    </a>
+                    <a class="footer-link" href="#feedback-section">
+                        <div class="footer-menu-item active-effect">Отзывы</div>
+                    </a>
+                    <a class="footer-link" href="#gallery-section">
+                        <div class="footer-menu-item active-effect">Галерея</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-contacts-wrapper">
+            <div class="footer-contacts-header">Конакты</div>
+            <div class="footer-contacts-item active-effect">220039, Минск, ул. Я. Купалы 17/30</div>
+            <div class="footer-contacts-item active-effect">metamorphose@mail.ru</div>
+            <div class="footer-contacts-item active-effect">+375 (44) 796-97-68</div>
+            <div class="footer-contacts-item active-effect">+375 (17) 222-38-37</div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div>
+            © Струнный оркестр «Метаморфоза», 2015-2023
+        </div>
+        <a class="police-confidence"
+           href="https://docs.google.com/document/d/1WyGqvYFVPyTRL7q2cfxFLzm6Xf0FvJah/edit?usp=drive_link&ouid=108041841920582412769&rtpof=true&sd=true"
+           target="_blank noopener noreferer">
+            <div class="active-effect">
+                Политика конфиденциальности
+            </div>
+        </a>
+    </div>
+</footer>
+
+<script src="scripts/jquery-3.7.1.min.js"></script>
+<script src="scripts/slick.min.js"></script>
+<script src="scripts/slider.js"></script>
+<script src="scripts/soon-events.js" type="module"></script>
+<script src="scripts/mobile-menu.js"></script>
+<script src="scripts/about.js"></script>
+<script src="scripts/modal.js" type="module"></script>
+<script src="scripts/past-events.js" type="module"></script>
+<script src="scripts/records.js" type="module"></script>
+<script src="scripts/soonConcert.js" type="module"></script>
+<script src="scripts/general.js" type="module"></script>
+</body>
+</html>

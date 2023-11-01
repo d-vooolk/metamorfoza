@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
+@font-face {
+font-family: "Angst";
+src: url("../fonts/AngstVF.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+:root {
+    --base-yellow: #C98708;
+    --base-hover-yellow: #E7A526;
+    --base-active-yellow: #B57300;
+    --base-dark: #121212;
+    --base-white: #FFFFFF;
+    --header-background: #161616;
+
+    --grey-divider: #3C3C3C;
+
+    --text-base-gray: #A1A1A1;
+    --disable-color: rgba(161, 161, 161, 0.28);
+}
+
+body {
+    font-family: Inter, serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Angst, serif;
+    margin: 0;
+    padding: 0;
+    color: var(--base-yellow);
+}
