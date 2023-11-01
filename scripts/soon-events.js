@@ -53,7 +53,7 @@ const eventLayout = (image, eventName, soloist, conductor, scene, date, time, by
                         <span class="participant-name">${soloist}</span>
                     </div>
                     <div class="participant">
-                        <span class "participant-role">Дирижёр</span>
+                        <span class="participant-role">Дирижёр</span>
                         <span class="participant-name">${conductor}</span>
                     </div>
                     <div class="participant">
