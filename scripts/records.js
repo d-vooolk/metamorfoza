@@ -14,14 +14,12 @@ const getRecordsLayout = () => {
                     <img src="${recordsImagesUrl}${recordsConfig[i]?.img}" alt="записи" class="record-img"/>
                     <div class="record-name">${recordsConfig[i]?.name}</div>
                     <div class="record-author">${recordsConfig[i]?.artists}</div>
-                    <div class="record-author">${recordsConfig[i]?.ean}</div>
-                    <div class="record-author">${recordsConfig[i]?.totalLength}</div>
                     <div class="listen-record">Слушать на площадках</div>
                     <div class="social-icons-list-wrapper">
                         ${recordsConfig[i]?.spotify ? `<a href="${recordsConfig[i]?.spotify}" target="_blank noopener noreferer" class="records-link">
                             <div class="record-in-social">
                                 <img src="images/icons/spotify-color.svg" alt="spotyfy">
-                                <div class="social-description">Spotyfy</div>
+                                <div class="social-description">Spotify</div>
                             </div>
                         </a>` : ''}
                         ${recordsConfig[i]?.zvuk ? `<a href="${recordsConfig[i]?.zvuk}" target="_blank noopener noreferer" class="records-link">
@@ -39,7 +37,7 @@ const getRecordsLayout = () => {
                         ${recordsConfig[i]?.youtube ? `<a href="${recordsConfig[i]?.youtube}" target="_blank noopener noreferer" class="records-link">
                             <div class="record-in-social">
                                 <img src="images/icons/youtube-music.svg" alt="youtube">
-                                <div class="social-description">Youtube</div>
+                                <div class="social-description">YouTube</div>
                             </div>
                         </a>` : ''}
                     </div>
