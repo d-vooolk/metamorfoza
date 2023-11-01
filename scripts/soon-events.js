@@ -11,6 +11,7 @@ const nextArrow = document.getElementById('soon-events-arrow-next');
 const eventsContainer = document.getElementById('events-container');
 const showMoreButton = document.getElementById('showMoreButton');
 let currentSlide = 0;
+const soonEventsImagesUrl = baseImagesUrl + '/soonEvents/';
 
 const arrowHandler = (type) => {
     let currentArrow = type === 'prev' ? prevArrow : nextArrow;
@@ -32,7 +33,7 @@ const showMoreHandler = (e) => {
     }
     const targetObject = [button.id.split('-')[1], button.id.split('-')[2]]
 
-    modalHandler(soonEvents[targetObject[0]].events[targetObject[1]], { type: MODAL_TYPE_SOON_EVENTS });
+    modalHandler(soonEvents[targetObject[0]].events[targetObject[1]], { type: MODAL_TYPE_SOON_EVENTS, url: soonEventsImagesUrl });
 }
 
 const eventLayout = (image, eventName, soloist, conductor, scene, date, time, byeLink, currentSlide, index) => {
@@ -40,7 +41,7 @@ const eventLayout = (image, eventName, soloist, conductor, scene, date, time, by
     eventCard.className = "event-card";
     eventCard.innerHTML = `
         <div class="future-event-image-wrapper">
-            <img src="${baseImagesUrl}${image}" alt="событие">
+            <img src="${soonEventsImagesUrl}${image}" alt="событие">
         </div>
         <div class="event-info">
             <div class="event-name">

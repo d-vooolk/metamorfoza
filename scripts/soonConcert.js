@@ -5,15 +5,16 @@ import {MODAL_TYPE_SOON_CONCERT} from "./constants.js";
 
 const firstBlock = document.getElementById('concerts-section');
 const secondBlock = document.getElementById('soon-concert-double');
+const soonConcertImagesUrl = baseImagesUrl + '/soonConcert/';
 
-const { img, eventName, soloists, conductor, byeLink } = soonConcertConfig;
+const {img, eventName, soloists, conductor, byeLink} = soonConcertConfig;
 
 const getSoonConcertLayout = () => {
     const layout = `
         <div class="add-event-wrapper">
             <h2 class="head-text">БЛИЖАЙШИЙ КОНЦЕРТ</h2>
             <div class="soon-event-content">
-                <img src="${baseImagesUrl}${img}" alt="ближайший концерт"/>
+                <img src="${soonConcertImagesUrl}${img}" alt="ближайший концерт"/>
                 <div class="soon-event-text-wrapper">
                     <div class="soon-event-title">${eventName}</div>
                     <div class="event-participants margin-bottom-20 soon-event-participants">
@@ -41,7 +42,14 @@ const getSoonConcertLayout = () => {
 const addEventToMoreButton = () => {
     const moreButton = document.getElementsByClassName('moreButtonSoonConcert');
     for (let button of moreButton) {
-        button.onclick = () => modalHandler(null, { type: MODAL_TYPE_SOON_CONCERT, data: soonConcertConfig});
+        button.onclick = () => modalHandler(
+            null,
+            {
+                type: MODAL_TYPE_SOON_CONCERT,
+                data: soonConcertConfig,
+                url: soonConcertImagesUrl,
+            }
+        );
     }
 }
 

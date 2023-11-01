@@ -334,7 +334,7 @@ h1 {
 }
 
 .soon-event-wrapper {
-    background-image: url("../images/images/soon-concert-background.jpeg");
+    background-image: url("../images/images/soonConcert/soon-concert-background.jpeg");
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -359,7 +359,7 @@ h1 {
 }
 
 .video-slider {
-    height: 700px;
+    height: 500px;
 }
 
 .past-events-wrapper {
@@ -565,7 +565,7 @@ h1 {
 }
 
 .subscribe-wrapper {
-    background: url("../images/images/news-background.png") center center no-repeat;
+    background: url("../images/images/news/news-background.png") center center no-repeat;
     display: flex;
     max-height: 900px;
     padding: 70px 210px;
@@ -1144,6 +1144,16 @@ input, textarea {
 .records-link {
     text-decoration: none;
     color: var(--base-white);
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
+    border: none;
+}
+
+.video-slider-container .slider-item {
+    max-width: 560px;
 }
 
 @media (min-width: 769px) and (max-width: 1280px) {

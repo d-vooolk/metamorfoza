@@ -3,6 +3,7 @@ import {baseImagesUrl} from "./utils.js";
 import {MAX_PAST_EVENTS, MODAL_TYPE_PAST_EVENTS} from "./constants.js";
 import {modalHandler} from "./modal.js";
 
+const pastEventsImagesUrl = baseImagesUrl + '/pastEvents/';
 const pastEventsContainer = document.getElementById('pastEventsList');
 let maxElements = MAX_PAST_EVENTS;
 const moreEventButtonLayout = `
@@ -14,7 +15,7 @@ const moreEventButtonLayout = `
 const getPastEventsLayout = () => {
     const eventLayout = (data, id) => `
                 <div class="past-event">
-                    <img src="${baseImagesUrl}${data.img}" alt="прошедшие события"/>
+                    <img src="${pastEventsImagesUrl}${data.img}" alt="прошедшие события"/>
                     <button class="button-sale button-sale-color button-past-event long-button" id="${id}">
                         <span>Подробнее</span>
                     </button>
@@ -42,7 +43,14 @@ const showMoreHandler = (e) => {
     }
     const targetObject = button.id;
 
-    modalHandler(null, { type: MODAL_TYPE_PAST_EVENTS, data: pastEventsConfig[targetObject] });
+    modalHandler(
+        null,
+        {
+            type: MODAL_TYPE_PAST_EVENTS,
+            data: pastEventsConfig[targetObject],
+            url: pastEventsImagesUrl,
+        }
+    );
 }
 
 const addEventsToButton = () => {

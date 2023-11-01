@@ -1,13 +1,12 @@
-import {baseImagesUrl} from "./utils.js";
 import {MODAL_TYPE_PAST_EVENTS} from "./constants.js";
 
 const modal = document.getElementById('modal');
 const closeModalButton = document.getElementById('closeModalButton');
 const modalContainer = document.getElementById('modalContainer');
 
-const modalImage = (data) => `
+const modalImage = (data, baseUrl) => `
                 <div class="modal-image">
-                    <img src="${baseImagesUrl}${data?.img}" alt="modalEvent" />
+                    <img src="${baseUrl}${data?.img}" alt="modalEvent" />
                 </div>`;
 const modalHeadText = (data) => `<h2 class="modal-head-text">${data?.eventName}</h2>`;
 const modalDateTime = (data, isShowBlock) => `<div class="modal-datetime">${isShowBlock ? `${data?.date} | ${data?.time}` : `${data.date}`}</div>`;
@@ -32,11 +31,11 @@ const modalContent = (layout) => `<div class="modalContent">${layout}</div>`;
 
 
 export const modalHandler = (config, otherConfig) => {
-    const { type, data } = otherConfig;
+    const { type, data, url } = otherConfig;
     const modalContentArray = [];
     const modalTextContentArray = [];
 
-    modalContentArray.push(modalImage(config || data));
+    modalContentArray.push(modalImage(config || data, url));
 
     if (type !== MODAL_TYPE_PAST_EVENTS) {
         modalTextContentArray.push(modalHeadText(config || data));
