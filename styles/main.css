@@ -1157,6 +1157,10 @@ iframe {
     max-width: 560px;
 }
 
+.mobile-img {
+    display: none;
+}
+
 @media (min-width: 769px) and (max-width: 1280px) {
     section {
         padding: 160px 33px 0;
@@ -1211,7 +1215,7 @@ iframe {
     }
 
     h1 {
-        margin-top: 50px;
+        margin-top: 10px;
         font-size: 88px;
         font-style: normal;
         font-weight: 400;
@@ -1445,7 +1449,7 @@ iframe {
     }
 
     .video {
-        padding: 80px 0 0;
+        padding: 80px 20px 0;
     }
 
     .slider-wrapper {
@@ -1453,12 +1457,16 @@ iframe {
     }
 
     .video-text {
-        align-items: center !important;
+        /*align-items: center !important;*/
+    }
+
+    .video-title {
+        max-width: 85vw;
     }
 
     .video-description {
         width: 320px;
-        text-align: center;
+        /*text-align: center;*/
     }
 
     .video-slider {
@@ -1636,6 +1644,32 @@ iframe {
     .soon-event-participants {
         display: flex;
         flex-direction: row;
+    }
+
+    iframe {
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100%;
+    }
+
+    .about-puzzles {
+        display: none;
+    }
+
+    .mobile-img {
+        display: flex;
+    }
+
+    .text-about-2 {
+        max-width: 100%;
+    }
+
+    .text-about-3 {
+        font-size: 15px;
+    }
+
+    .about-list-wrapper {
+        width: 100%;
     }
 }
 

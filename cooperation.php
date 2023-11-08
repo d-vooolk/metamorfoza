@@ -13,7 +13,7 @@ if ($is_agree) {
     $agreement = "Не согласен на обработку персональных данных";
 }
 
-if (mail("nestwedman@gmail.com", "Заявка на сотрудничество", "Заявка на сотрудничество: " . $mail . " \r\n" . $name . " \r\n" . $mail . " \r\n" . $phone . " \r\n" . "Сообщение: " . $message . " \r\n" . $agreement . " \r\n")) {
+if (mail("metasymphony@mail.ru", "Заявка на сотрудничество", "Заявка на сотрудничество: " . $mail . " \r\n" . $name . " \r\n" . $mail . " \r\n" . $phone . " \r\n" . "Сообщение: " . $message . " \r\n" . $agreement . " \r\n")) {
     echo('Сообщение успешно отправлено. Вы можете вернуться к сайту');
 } else {
     echo('Ошибка при отправке сообщения');

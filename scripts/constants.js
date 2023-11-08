@@ -2,5 +2,5 @@ export const MODAL_TYPE_SOON_EVENTS = 'SOON_EVENTS';
 export const MODAL_TYPE_PAST_EVENTS = 'PAST_EVENTS';
 export const MODAL_TYPE_SOON_CONCERT = 'SOON_CONCERT';
 
-export const MAX_PAST_EVENTS = 9;
+export const MAX_PAST_EVENTS = 3;
 export const MAX_RECORDS = 6;
