@@ -1681,6 +1681,10 @@ iframe {
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .past-events-section {
+        padding: 60px 0 0;
+    }
 }
 
 @media screen and (min-width: 1201px) {
