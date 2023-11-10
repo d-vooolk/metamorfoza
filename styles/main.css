@@ -17,6 +17,10 @@ section {
     padding: 160px 210px 0;
 }
 
+.past-events-section {
+    padding: 0 210px 0;
+}
+
 .nav-burger {
     display: none;
 }
