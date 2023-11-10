@@ -2,7 +2,7 @@
 /* Настройки ближайшего концерта */
 
 export const soonConcertConfig = {
-    img: 'soon-concert.png',
+    img: 'soon-concert.jpg',
     eventName: 'Приглашаем на концерт струнного оркестра «МЕТАМОРФОЗА»',
     soloists: 'Илья Иофф (скрипка), Станислав Соловьёв (фортепиано)',
     conductor: 'Павел Любомудров',
